@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <form action="../textPassword/successful.html" method="GET">
+      <fieldset>
+        <legend>Personal data</legend>
+        <label>
+          Name:
+          <input type="text" name="username" /> </label
+        ><br /><br />
+        <label>
+          Email:
+          <input type="text" name="email" /> </label
+        ><br /><br />
+        <label>
+          Phone number:
+          <input type="number" name="phonenumber" />
+        </label>
+      </fieldset>
+      <br /><br />
+      <fieldset>
+        <legend>Location</legend>
+        <label for="city"
+          >City: <input type="text" name="city" id="city" /> </label
+        ><br /><br />
+        <label for="street"
+          >Street: <input type="text" name="street" id="street" /> </label
+        ><br /><br />
+        <label for="street number"
+          >Street number:
+          <input type="number" name="streetnumber" id="street number" />
+        </label>
+      </fieldset>
+      <br /><br />
+      <fieldset>
+        <legend>Event info</legend>
+        <select name="event">
+          <option value="birthday">Birthday</option>
+          <option value="wedding" selected>Wedding</option>
+          <option value="company">Company</option></select
+        ><br />
+        <label for="number"
+          >Number guests:
+          <input
+            type="number"
+            name="numberguests"
+            id="number"
+            placeholder="12"
+          />
+        </label>
+      </fieldset>
+    </form>
+  </body>
+</html>
