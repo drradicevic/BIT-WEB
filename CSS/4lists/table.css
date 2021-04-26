@@ -1,0 +1,28 @@
+table,
+td {
+  border: 2px solid;
+  border-collapse: collapse;
+  margin: auto;
+}
+.header {
+  font-weight: bold;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+img {
+  height: 100px;
+}
+td {
+  padding: 10px 0 10px 0;
+}
+tr:nth-child(2n) {
+  background-color: gray;
+}
+
+tr:hover {
+  background-color: yellow;
+}
+#Samsung {
+  padding-left: 13px;
+}

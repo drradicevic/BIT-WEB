@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 960px;
+  margin: auto;
+}
+
+nav {
+  background-color: rgba(255, 0, 0, 0.87);
+  display: flex;
+  justify-content: flex-end;
+  margin: auto;
+}
+
+ul {
+  list-style: none;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+ul > li {
+  margin-right: 30px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+img {
+  margin-top: 5px;
+  width: 960px;
+}
+
+.article {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.size {
+  width: 300px;
+  height: 200px;
+  margin: 5px;
+}
+.red {
+  background-color: red;
+}
+.blue {
+  background-color: blue;
+}
+.menu {
+  background-color: orange;
+}
+
+p {
+  width: 300px;
+  height: 200px;
+}
+
+.hidden {
+  background-color: white;
+}
+
+footer {
+  background-color: rgb(33, 33, 116);
+  height: 25px;
+  width: 90%;
+  margin: auto;
+  color: white;
+  padding-left: 200px;
+}
+
+div > .list {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  color: tomato;
+}

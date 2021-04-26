@@ -1,0 +1,40 @@
+.div1 {
+  background-color: rgb(226, 219, 219);
+  width: 300px;
+  padding-top: 10px;
+  margin-left: 200px;
+  margin-top: 50px;
+  border-radius: 20px 0 20px 0;
+}
+h1 {
+  text-align: center;
+}
+.form {
+  color: rgb(13, 13, 112);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: ;
+}
+.get {
+  color: orange;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+label {
+  padding-left: 50px;
+}
+input {
+  margin-left: 50px;
+  max-width: 200px;
+}
+#submit {
+  background-color: red;
+  color: white;
+  margin-left: 75px;
+  margin-bottom: 20px;
+  padding: 0 50px 0 50px;
+  border-radius: 6px;
+}
+hr {
+  width: 80%;
+  display: block;
+  margin: 0 auto 10px;
+}

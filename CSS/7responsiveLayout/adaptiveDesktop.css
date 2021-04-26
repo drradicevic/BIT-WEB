@@ -1,0 +1,211 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+body {
+  padding: 20px;
+}
+.container {
+  width: 100%;
+  margin: auto;
+}
+header {
+  text-align: center;
+  margin: 20px 0;
+}
+.wrapper {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  border: 1px solid lightgrey;
+  border-radius: 7px;
+}
+img {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+h1 {
+  font-weight: lighter;
+  margin: 0px;
+}
+header > nav > ul > li {
+  list-style-type: none;
+  padding: 5px;
+}
+ul > li {
+  width: 100%;
+  border: 1px solid lightgrey;
+}
+.radius {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+ul > li > a {
+  text-decoration: none;
+  margin: auto;
+}
+
+ul li:hover {
+  /*proveriti*/
+  background-color: blue;
+}
+
+ul li:hover a {
+  /*proveriti*/
+  color: white;
+}
+
+.article {
+  border: 1px solid lightgrey;
+  margin: 20px 0;
+  border-radius: 7px;
+  padding: 10px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 577px) {
+  header {
+    text-align: center;
+    margin: 20px 0;
+  }
+  h1 {
+    font-weight: lighter;
+    margin: 0px;
+    float: left;
+  }
+  header > nav > ul > li {
+    list-style-type: none;
+    padding: 5px;
+  }
+  ul {
+    position: absolute;
+    right: 5%;
+    top: 59px;
+    width: 50%;
+    text-align: right;
+  }
+  li {
+    display: inline;
+    border: none;
+  }
+
+  ul > li {
+    width: 100%;
+    border: 1px solid lightgrey;
+  }
+  .radius {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  ul > li > a {
+    text-decoration: none;
+    margin: auto;
+    font-size: 20px;
+    padding: 3%;
+  }
+
+  ul li:hover {
+    /*proveriti*/
+    background-color: blue;
+  }
+
+  ul li:hover a {
+    /*proveriti*/
+    color: white;
+  }
+  .article {
+    border: 1px solid lightgrey;
+    margin: 20px 0;
+    border-radius: 7px;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .article img {
+    width: 40%;
+    float: left;
+  }
+  .article p {
+    width: 60%;
+    float: right;
+  }
+  img {
+    display: block;
+    width: 100%;
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    text-align: center;
+    margin: 20px 0;
+  }
+  h1 {
+    font-weight: lighter;
+    margin: 0px;
+    float: left;
+  }
+  header > nav > ul > li {
+    list-style-type: none;
+    padding: 5px;
+  }
+  ul {
+    position: absolute;
+    right: 5%;
+    top: 59px;
+    width: 50%;
+    text-align: right;
+  }
+  li {
+    display: inline;
+    border: none;
+  }
+
+  ul > li {
+    width: 100%;
+    border: 1px solid lightgrey;
+  }
+  .radius {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  ul > li > a {
+    text-decoration: none;
+    margin: auto;
+    font-size: 20px;
+    padding: 3%;
+  }
+
+  ul li:hover {
+    /*proveriti*/
+    background-color: blue;
+  }
+
+  ul li:hover a {
+    /*proveriti*/
+    color: white;
+  }
+  .article {
+    border: none;
+    margin: 5px;
+    border-radius: 7px;
+    padding: 0px;
+    clear: both;
+  }
+  main > div > img {
+    width: 33%;
+    display: block;
+    border-radius: 7px;
+    float: left;
+  }
+  main > div > p {
+    width: 33%;
+    display: inline-block;
+    float: right;
+  }
+}

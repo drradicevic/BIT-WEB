@@ -1,0 +1,40 @@
+.prvi {
+  color: rgb(18, 22, 22);
+  background-color: rgb(208, 137, 238);
+  opacity: 0.5;
+}
+.drugi {
+  color: rgb(252, 9, 9);
+  background-color: rgba(64, 42, 189, 0.5);
+}
+.treci {
+  color: #2bf824;
+  background-color: rgb(38, 52, 58);
+}
+.img1 {
+  opacity: 0.5;
+}
+
+.img2 {
+  color: rgba(245, 24, 24, 0.8);
+}
+
+.table {
+  width: 1500px;
+  height: 100px;
+}
+.col1 {
+  background-color: aliceblue;
+}
+.col2 {
+  background-color: hotpink;
+}
+.col3 {
+  background-color: rgb(121, 236, 14);
+}
+.col4 {
+  background-color: rgb(241, 6, 6);
+}
+.col5 {
+  background-color: rgb(15, 36, 231);
+}

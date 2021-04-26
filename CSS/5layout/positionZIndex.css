@@ -1,0 +1,81 @@
+body {
+  width: 100%;
+}
+
+.div1 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.div2 {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  position: relative;
+  bottom: 50px;
+  left: 50px;
+}
+
+.div3 {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  position: relative;
+  bottom: 100px;
+  left: 100px;
+}
+
+.div4 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+}
+
+.div5 {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  z-index: 1;
+}
+
+.div6 {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  position: absolute;
+  top: 110px;
+  right: 110px;
+  z-index: 0;
+}
+
+.div7 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  left: 45%;
+}
+
+.div8 {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  position: relative;
+  left: 45%;
+}
+
+.div9 {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  position: relative;
+  left: 45%;
+}

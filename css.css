@@ -1,0 +1,55 @@
+.article1 {
+  background-color: rgb(136, 135, 245);
+  width: 49%;
+}
+
+.article1 div {
+  background-color: rgb(136, 135, 245);
+  display: flex;
+}
+.article1 > div > img {
+  width: 150px;
+  border-radius: 75%;
+  border: solid 3px white;
+  padding: 5px;
+  margin: 20px 0px 0px 20px;
+}
+
+.article1 > p {
+  margin-left: 50px;
+  padding-bottom: 30px;
+  color: red;
+}
+
+.article2 > div > h1 {
+  margin: auto 0px;
+  margin-left: 50px;
+}
+
+.article2 {
+  background-color: rgb(136, 135, 245);
+  width: 49%;
+}
+
+.article2 div {
+  background-color: rgb(136, 135, 245);
+  display: flex;
+}
+.article2 > div > img {
+  width: 150px;
+  border-radius: 75%;
+  border: solid 3px white;
+  padding: 5px;
+  margin: 20px 0px 0px 20px;
+}
+
+.article2 > p {
+  margin-left: 50px;
+  padding-bottom: 30px;
+  color: red;
+}
+
+.article1 > div > h1 {
+  margin: auto 0px;
+  margin-left: 50px;
+}
