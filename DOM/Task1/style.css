@@ -1,0 +1,16 @@
+.first {
+  background: red;
+}
+
+.second {
+  background: yellow;
+}
+
+.third {
+  background: green;
+}
+
+.forth {
+  background: rgb(209, 127, 194);
+  text-transform: uppercase;
+}
