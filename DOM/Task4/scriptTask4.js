@@ -2,7 +2,7 @@ function dropDownList2(arr, div) {
   var selectingBody = document.querySelector("body");
   var selectingScript = document.querySelector("script");
 
-  var creatingNodeDiv = document.createElement(div);
+  var creatingNodeDiv = document.createElement("div");
   var creatingLabel = document.createElement("label");
   var creatingSelect = document.createElement("select");
 
