@@ -18,4 +18,5 @@ body {
   bottom: 80px;
   left: 45%;
   height: 300px;
+  transition: bottom 0.7s;
 }

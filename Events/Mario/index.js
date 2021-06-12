@@ -3,6 +3,8 @@ var mario = document.querySelector(".mario");
 var body = document.querySelector("body");
 var x = 0;
 var moveBg;
+var position = 80;
+var jump;
 
 body.addEventListener("keydown", function (e) {
   if (e.key == "ArrowRight") {
@@ -16,6 +18,7 @@ body.addEventListener("keydown", function (e) {
       }, 1);
     }
   }
+
   if (e.key == "ArrowLeft") {
     if (mario.getAttribute("src") === "./img/mario.png") {
       mario.removeAttribute("src");
@@ -26,6 +29,13 @@ body.addEventListener("keydown", function (e) {
         bg.style.backgroundPosition = x + "px bottom";
       }, 1);
     }
+  }
+
+  if (e.key == " ") {
+    mario.style.bottom = position + 120 + "px";
+    jump = setTimeout(function () {
+      mario.style.bottom = position + "px";
+    }, 800);
   }
 });
 
