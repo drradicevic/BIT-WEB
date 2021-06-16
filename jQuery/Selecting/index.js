@@ -1,19 +1,34 @@
-// $("li").click(function () {
-//   $(this).remove();
-// });
+// Selecting
+// Create a page that contains navigation (ul element)
+// Navigation should contain odd number of elements
 
-var $selected = $("body");
+// Select the first element of the list and give it a bottom border
 
-var $created = $("<h1>");
+// Select all list elements and transform their text to uppercase
 
-var $someNode = document.getElementById("first");
+// Select active element of the list and change its font color
 
-var $jQueryNode = $($someNode);
+// Find the middle one and change its background color
 
-$jQueryNode.click(function () {
-  $(this).remove();
+var $addBorder = $("li:first").css({
+  "border-bottom": "2px solid red",
 });
 
-$created.text("Add some heading");
+var $wholeList = $("li");
+$wholeList.css({
+  "text-transform": "uppercase",
+});
 
-$selected.prepend($created);
+var $liActive = $(".active");
+
+$liActive.css({
+  color: "red",
+});
+
+var $middle = $("li").each(function (index, element) {
+  if (index === 2) {
+    $(element).css({
+      "background-color": "yellow", // check
+    });
+  }
+});
