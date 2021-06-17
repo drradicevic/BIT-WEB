@@ -25,10 +25,15 @@ $liActive.css({
   color: "red",
 });
 
-var $middle = $("li").each(function (index, element) {
-  if (index === 2) {
-    $(element).css({
-      "background-color": "yellow", // check
-    });
-  }
+var $middleLi = $("li:nth-of-type(3)"); //first way
+$middleLi.css({
+  "background-color": "yellow",
 });
+
+// var $middle = $("li").each(function (index, element) {
+//   if (index === 2) {
+//     $(element).css({
+//       "background-color": "yellow", // check
+//     });
+//   }
+// });
