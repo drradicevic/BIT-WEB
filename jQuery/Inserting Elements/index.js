@@ -21,22 +21,23 @@ var $arrLinks = [
   "https://images.pexels.com/photos/1476880/pexels-photo-1476880.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 ];
 
-var $isSize = false;
+var isSize = false;
 
 $.each($arrLinks, function (index) {
-  var $size = Math.round(300 * Math.random() + 100);
-  var img = $("<img>").attr("src", $arrLinks[index]).css({
-    width: $size,
-    height: $size,
+  var size = Math.round(200 * Math.random() + 100);
+  var $img = $("<img>").attr("src", $arrLinks[index]).css({
+    width: size,
+    height: size,
     "object-fit": "cover",
   });
-  $divContainer.append(img);
+  $divContainer.append($img);
 
-  if ($size < "200" && $isSize === false) {
-    img.css({
+  if (size < "200" && !isSize) {
+    $img.css({
       border: "5px solid green",
     });
-    $isSize = true;
+  } else {
+    isSize = true;
   }
 });
 
