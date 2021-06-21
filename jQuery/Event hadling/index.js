@@ -1,15 +1,13 @@
 var $body = $("body");
-var $field = $("<div>");
+var $field = $("<img>");
 var $player = $("<img>");
 var $button = $("<button>");
 
-// $field.attr("src", "./pictures/field.png");
-
+$field.attr("src", "./pictures/field.png");
 $player.attr("src", "./pictures/player.png");
 $button.text("Stop moving");
 
 $field.css({
-  "background-image": "url(./pictures/field.png)",
   "background-repeat": "no-repeat",
   "background-size": "contain",
   "background-position": "center",
