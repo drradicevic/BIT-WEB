@@ -2,6 +2,7 @@ var $body = $("body");
 var $field = $("<img>");
 var $player = $("<img>");
 var $button = $("<button>");
+var isSet = true;
 
 $field.attr("src", "./pictures/field.png");
 $player.attr("src", "./pictures/player.png");
@@ -29,8 +30,8 @@ $player.css({
 
 $button.css({
   position: "absolute",
-  bottom: "0",
-  right: "200px",
+  bottom: "-300px",
+  right: "100px",
   padding: "5px 10px",
   "background-color": "#c0392b",
   color: "white",
@@ -39,6 +40,36 @@ $button.css({
   cursor: "pointer",
 });
 
+var playerHandler = function (event) {
+  var width = (event.offsetX - $player.width() / 2) + "px";
+  var height = (event.offsetY - $player.height() / 2) + "px";
+  $player.css({
+    "left": width,
+    "top": height
+  });
+};
+
+var stop = function (){
+  if(isSet) {
+    $field.off("click", playerHandler)
+  } else {
+    $field.on("click", playerHandler)
+  }
+  isSet = !isSet;
+}
+
+
 $body.prepend($player);
 $body.append($field);
 $body.append($button);
+
+$field.on("click", playerHandler)
+
+$button.on("click", stop)
+
+
+
+
+
+
+
