@@ -1,5 +1,5 @@
 var $selectedPicture = $("img");
 
 $selectedPicture.css({
-    border: "2px solid blue"
-})
+  border: "2px solid red",
+});
