@@ -1,42 +1,70 @@
-let endpoint = "http://api.tvmaze.com/search/shows?q=";
-let $searchInput = document.querySelector(".form-control");
-let $divContainerFluid = document.querySelector(".container-fluid");
+const endpoint = "http://api.tvmaze.com/search/shows?q=";
+const $searchInput = document.querySelector(".form-control");
+const $movieListHTML = document.querySelector("#movieList");
+const $dropDown = document.querySelector("#dropdown");
 
-let request = new XMLHttpRequest();
+const request = new XMLHttpRequest();
 
 request.onload = function () {
-  if (request.status >= 200 && request.status < 300) {
-    let response = JSON.parse(request.responseText);
-    console.log(response);
-    response.items.forEach(function (user) {
-      let name = user.login;
-      let imageSrc = user.image.medium;
-      let $divRow = document.createElement("div");
-      $divRow.setAttribute("class", "row");
-      $divContainerFluid.appendChild($divRow);
+  if (request.status == 200) {
+    const response = JSON.parse(request.responseText);
+    response.forEach(function (movie) {
+      const name = movie.name;
+      const imageSrc = movie.image.medium;
 
-      let $divCol1 = document.createElement("div");
-      $divCol1.setAttribute("class", "col");
-      $divRow.appendChild($divCol1);
+      const $divCol = document.createElement("div");
+      $divCol.setAttribute("class", "col");
+      $movieListHTML.appendChild($divCol);
 
-      let $divCol2 = document.createElement("div");
-      $divCol2.setAttribute("class", "col");
-      $divCol1.appendChild($divCol2);
-
-      let $divCard = document.createElement("div");
+      const $divCard = document.createElement("div");
       $divCard.setAttribute("class", "card");
-      $divCol2.appendChild($divCard);
+      $divCol.appendChild($divCard);
 
-      let $img = document.createElement("img");
-
-      $name.textContent = name;
+      const $img = document.createElement("img");
       $img.setAttribute("src", imageSrc);
-      $card.append($img, $name);
-      $userContainer.appendChild($card);
-      $result.appendChild($userContainer);
+
+      const $divCardBody = document.createElement("div");
+      $divCardBody.setAttribute("class", "card-body");
+
+      const $cardTitle = document.createElement("h5");
+      $cardTitle.setAttribute("class", "card-title");
+      $cardTitle.textContent = name;
+      $divCardBody.appendChild($cardTitle);
+
+      $divCard.append($img, $divCardBody);
     });
   }
 };
 
-request.open("GET", "http://api.tvmaze.com/shows");
-request.send();
+window.onload = function () {
+  const completeUrl = "http://api.tvmaze.com/shows";
+
+  request.open("GET", completeUrl);
+
+  request.send();
+};
+
+$searchInput.addEventListener("keyup", function () {
+  const newRequest = new XMLHttpRequest();
+
+  newRequest.onload = function () {
+    if (newRequest.status === 200) {
+      const searchResponse = JSON.parse(newRequest.responseText);
+      $dropDown.innerHTML = "";
+      searchResponse.forEach(function (value) {
+        console.log(value);
+        let name = value.show.name;
+        let $searchItem = document.createElement("li");
+        $searchItem.setAttribute("class", "dropdown-item");
+        $searchItem.textContent = name;
+        $dropDown.appendChild($searchItem);
+      });
+    }
+  };
+  let inputValue = $searchInput.value;
+  let newCompleteUrl = endpoint + inputValue;
+  newRequest.open("GET", newCompleteUrl);
+  newRequest.send();
+});
+
+// kreirati event listener na input polju on keypress, unutar eventa imamo request.onload I sve te korake. u complete url ćemo imati endpoint + input.value + ona prečica za 10per page. Nakon toga pravimo foreach za lijeve unutar ul id.dropdown
