@@ -8,52 +8,40 @@ const $noOfSeasons = document.querySelector(".seasons");
 const $seasonList = document.querySelector(".seasonList");
 const $castList = document.querySelector(".castList");
 const $shDetails = document.querySelector(".details");
-
+const $backToHome = document.querySelector(".navbar-brand");
 const request = new XMLHttpRequest();
-
 request.onload = function () {
   if (request.status == 200) {
     const response = JSON.parse(request.responseText);
     response.forEach(function (movie) {
       const name = movie.name;
       const imageSrc = movie.image.medium;
-
       const $divCol = document.createElement("div");
       $divCol.setAttribute("class", "col");
       $movieListHTML.appendChild($divCol);
-
       const $divCard = document.createElement("div");
       $divCard.setAttribute("class", "card");
       $divCol.appendChild($divCard);
-
       const $img = document.createElement("img");
       $img.setAttribute("src", imageSrc);
-
       const $divCardBody = document.createElement("div");
       $divCardBody.setAttribute("class", "card-body");
-
       const $cardTitle = document.createElement("h5");
       $cardTitle.setAttribute("class", "card-title");
       $cardTitle.textContent = name;
       $divCardBody.appendChild($cardTitle);
-
       $divCard.append($img, $divCardBody);
     });
   }
 };
-
 window.onload = function () {
   const completeUrl = "http://api.tvmaze.com/shows";
-
   request.open("GET", completeUrl);
-
   request.send();
 };
-
 $searchInput.addEventListener("keyup", function () {
   if ($searchInput.value !== "") {
     const newRequest = new XMLHttpRequest();
-
     newRequest.onload = function () {
       if (newRequest.status === 200) {
         const searchResponse = JSON.parse(newRequest.responseText);
@@ -77,13 +65,10 @@ $searchInput.addEventListener("keyup", function () {
             movieCompleteURL = "https://api.tvmaze.com/shows/" + $movieId;
             movieRequest.open("GET", movieCompleteURL);
             movieRequest.send();
-
             const seasoneRequest = new XMLHttpRequest();
-
             seasoneRequest.onload = function () {
               if (seasoneRequest.status === 200) {
                 let seasoneResponse = JSON.parse(seasoneRequest.responseText);
-
                 $noOfSeasons.textContent = seasoneResponse.length;
                 $seasonList.innerHTML = "";
                 seasoneResponse.forEach(function (season) {
@@ -98,9 +83,8 @@ $searchInput.addEventListener("keyup", function () {
             seasoneCompleteURL = `https://api.tvmaze.com/shows/${$movieId}/seasons`;
             seasoneRequest.open("GET", seasoneCompleteURL);
             seasoneRequest.send();
-
             const castRequest = new XMLHttpRequest();
-
+            $castList.innerHTML = "";
             castRequest.onload = function () {
               if (castRequest.status === 200) {
                 let castResponse = JSON.parse(castRequest.responseText);
@@ -117,7 +101,6 @@ $searchInput.addEventListener("keyup", function () {
             castCompleteURL = `https://api.tvmaze.com/shows/${$movieId}/cast`;
             castRequest.open("GET", castCompleteURL);
             castRequest.send();
-
             const showDetailsRequest = new XMLHttpRequest();
             $shDetails.innerHTML = "";
             showDetailsRequest.onload = function () {
@@ -133,7 +116,6 @@ $searchInput.addEventListener("keyup", function () {
             showDetailsRequest.open("GET", showCompleteURL);
             showDetailsRequest.send();
           });
-
           $searchItem.textContent = name;
           $dropDown.appendChild($searchItem);
         });
@@ -147,5 +129,9 @@ $searchInput.addEventListener("keyup", function () {
     $dropDownListWrapper.innerHTML = "";
   }
 });
-
+$backToHome.addEventListener("click", function () {
+  $movieListHTML.style.display = "flex";
+  $singleMovie.style.display = "none";
+  request.send();
+});
 // kreirati event listener na input polju on keypress, unutar eventa imamo request.onload I sve te korake. u complete url ćemo imati endpoint + input.value + ona prečica za 10per page. Nakon toga pravimo foreach za lijeve unutar ul id.dropdown
